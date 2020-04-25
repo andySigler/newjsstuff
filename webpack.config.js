@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   module: {
     rules: [
@@ -7,5 +9,10 @@ module.exports = {
         use: ["babel-loader", "eslint-loader"]
       }
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
   }
 };
